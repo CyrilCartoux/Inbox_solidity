@@ -1,8 +1,12 @@
+const fs = require("fs");
 const assert = require("assert");
 const ganache = require("ganache-cli");
 const Web3 = require('web3');
 const web3 = new Web3(ganache.provider());
 const { interface, bytecode } = require('../compile');
+// Store the ABI + bytecode to a demo.json file
+const artifact = JSON.stringify({interface, bytecode}, null, 2);
+fs.writeFileSync("Demo.json", artifact);
 
 let accounts;
 let inbox;
