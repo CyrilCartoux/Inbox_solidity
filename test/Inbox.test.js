@@ -22,7 +22,7 @@ beforeEach(async () => {
             arguments: ['Hi there!']
         })
         .send({ from: accounts[0], gas: '1000000' })
-    
+    console.log(accounts)
 });
 
 describe('Inbox', () => {
